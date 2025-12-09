@@ -1,0 +1,813 @@
+// ============================================
+// KOTLIN COLLECTIONS: 200 PRACTICE QUESTIONS
+// ============================================
+
+// SECTION 1: LIST OPERATIONS (1-40)
+
+// 1. Create an empty list of integers
+// Input: -
+// Expected: []
+
+// 2. Create a list with elements [1, 2, 3, 4, 5]
+// Input: 1, 2, 3, 4, 5
+// Expected: [1, 2, 3, 4, 5]
+
+// 3. Create a mutable list with [10, 20, 30]
+// Input: 10, 20, 30
+// Expected: [10, 20, 30]
+
+// 4. Add element 40 to mutable list [10, 20, 30]
+// Input: [10, 20, 30], add 40
+// Expected: [10, 20, 30, 40]
+
+// 5. Add element 5 at index 0 to list [10, 20, 30]
+// Input: [10, 20, 30], add 5 at index 0
+// Expected: [5, 10, 20, 30]
+
+// 6. Remove element 20 from list [10, 20, 30, 20]
+// Input: [10, 20, 30, 20], remove 20
+// Expected: [10, 30, 20]
+
+// 7. Remove element at index 1 from [10, 20, 30]
+// Input: [10, 20, 30], removeAt 1
+// Expected: [10, 30]
+
+// 8. Get element at index 2 from [5, 10, 15, 20]
+// Input: [5, 10, 15, 20], index 2
+// Expected: 15
+
+// 9. Get first element from [100, 200, 300]
+// Input: [100, 200, 300]
+// Expected: 100
+
+// 10. Get last element from [100, 200, 300]
+// Input: [100, 200, 300]
+// Expected: 300
+
+// 11. Find size of list [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5]
+// Expected: 5
+
+// 12. Check if list [1, 2, 3, 4] contains 3
+// Input: [1, 2, 3, 4], check 3
+// Expected: true
+
+// 13. Find index of element 30 in [10, 20, 30, 40]
+// Input: [10, 20, 30, 40], find 30
+// Expected: 2
+
+// 14. Find last index of 2 in [1, 2, 3, 2, 1]
+// Input: [1, 2, 3, 2, 1], find 2
+// Expected: 3
+
+// 15. Get sublist from index 1 to 4 of [0, 1, 2, 3, 4, 5]
+// Input: [0, 1, 2, 3, 4, 5], subList(1, 4)
+// Expected: [1, 2, 3]
+
+// 16. Check if list [] is empty
+// Input: []
+// Expected: true
+
+// 17. Check if list [1, 2] is not empty
+// Input: [1, 2]
+// Expected: true
+
+// 18. Map each element * 3 in [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], multiply by 3
+// Expected: [3, 6, 9, 12]
+
+// 19. Filter elements > 5 from [2, 5, 7, 10, 3]
+// Input: [2, 5, 7, 10, 3], filter > 5
+// Expected: [7, 10]
+
+// 20. Filter elements NOT greater than 3 from [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], filterNot > 3
+// Expected: [1, 2, 3]
+
+// 21. Print each element of [10, 20, 30]
+// Input: [10, 20, 30]
+// Expected: 10 20 30
+
+// 22. Check if any element > 8 in [1, 5, 9, 3]
+// Input: [1, 5, 9, 3], any > 8
+// Expected: true
+
+// 23. Check if all elements > 0 in [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], all > 0
+// Expected: true
+
+// 24. Check if none are negative in [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], none < 0
+// Expected: true
+
+// 25. Calculate sum of [10, 20, 30, 40]
+// Input: [10, 20, 30, 40]
+// Expected: 100
+
+// 26. Calculate average of [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50]
+// Expected: 30.0
+
+// 27. Find max element in [15, 42, 8, 23, 16]
+// Input: [15, 42, 8, 23, 16]
+// Expected: 42
+
+// 28. Find min element in [15, 42, 8, 23, 16]
+// Input: [15, 42, 8, 23, 16]
+// Expected: 8
+
+// 29. Sort list [64, 34, 25, 12, 22, 11, 90]
+// Input: [64, 34, 25, 12, 22, 11, 90]
+// Expected: [11, 12, 22, 25, 34, 64, 90]
+
+// 30. Sort list in descending order [3, 1, 4, 1, 5]
+// Input: [3, 1, 4, 1, 5]
+// Expected: [5, 4, 3, 1, 1]
+
+// 31. Reverse list [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5]
+// Expected: [5, 4, 3, 2, 1]
+
+// 32. Get distinct elements from [1, 2, 2, 3, 3, 3, 4]
+// Input: [1, 2, 2, 3, 3, 3, 4]
+// Expected: [1, 2, 3, 4]
+
+// 33. Take first 3 elements from [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50], take 3
+// Expected: [10, 20, 30]
+
+// 34. Take last 2 elements from [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50], takeLast 2
+// Expected: [40, 50]
+
+// 35. Drop first 2 elements from [10, 20, 30, 40]
+// Input: [10, 20, 30, 40], drop 2
+// Expected: [30, 40]
+
+// 36. Drop last 2 elements from [10, 20, 30, 40]
+// Input: [10, 20, 30, 40], dropLast 2
+// Expected: [10, 20]
+
+// 37. Slice elements at indices 1 to 3 from [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50], slice 1..3
+// Expected: [20, 30, 40]
+
+// 38. Chunk list [1, 2, 3, 4, 5, 6, 7] into groups of 3
+// Input: [1, 2, 3, 4, 5, 6, 7], chunk size 3
+// Expected: [[1, 2, 3], [4, 5, 6], [7]]
+
+// 39. Create sliding windows of size 3 from [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], window size 3
+// Expected: [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+
+// 40. Partition list [1, 2, 3, 4, 5, 6] into even and odd
+// Input: [1, 2, 3, 4, 5, 6], partition by even/odd
+// Expected: evens=[2, 4, 6], odds=[1, 3, 5]
+
+// SECTION 2: SET OPERATIONS (41-70)
+
+// 41. Create an empty set of strings
+// Input: -
+// Expected: []
+
+// 42. Create a set with ["apple", "banana", "cherry"]
+// Input: "apple", "banana", "cherry"
+// Expected: [apple, banana, cherry]
+
+// 43. Create set from [1, 2, 2, 3, 3, 3] (removes duplicates)
+// Input: [1, 2, 2, 3, 3, 3]
+// Expected: [1, 2, 3]
+
+// 44. Create mutable set with [5, 10, 15]
+// Input: 5, 10, 15
+// Expected: [5, 10, 15]
+
+// 45. Add element 20 to set [5, 10, 15]
+// Input: [5, 10, 15], add 20
+// Expected: [5, 10, 15, 20]
+
+// 46. Try adding duplicate 10 to set [5, 10, 15]
+// Input: [5, 10, 15], add 10
+// Expected: [5, 10, 15]
+
+// 47. Remove element 10 from set [5, 10, 15, 20]
+// Input: [5, 10, 15, 20], remove 10
+// Expected: [5, 15, 20]
+
+// 48. Check if set ["a", "b", "c"] contains "b"
+// Input: ["a", "b", "c"], check "b"
+// Expected: true
+
+// 49. Find size of set [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5]
+// Expected: 5
+
+// 50. Union of sets [1, 2, 3] and [3, 4, 5]
+// Input: [1, 2, 3] union [3, 4, 5]
+// Expected: [1, 2, 3, 4, 5]
+
+// 51. Intersection of [1, 2, 3] and [2, 3, 4]
+// Input: [1, 2, 3] intersect [2, 3, 4]
+// Expected: [2, 3]
+
+// 52. Subtract [2, 3] from [1, 2, 3, 4]
+// Input: [1, 2, 3, 4] subtract [2, 3]
+// Expected: [1, 4]
+
+// 53. Convert list [1, 1, 2, 2, 3] to set
+// Input: [1, 1, 2, 2, 3]
+// Expected: [1, 2, 3]
+
+// 54. Convert set [10, 20, 30] to list
+// Input: [10, 20, 30]
+// Expected: [10, 20, 30]
+
+// 55. Filter set [1, 2, 3, 4, 5] for elements > 3
+// Input: [1, 2, 3, 4, 5], filter > 3
+// Expected: [4, 5]
+
+// 56. Map set [1, 2, 3] with each element * 10
+// Input: [1, 2, 3], multiply by 10
+// Expected: [10, 20, 30]
+
+// 57. Check if any element > 3 in [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], any > 3
+// Expected: true
+
+// 58. Check if all elements are positive in [1, 2, 3]
+// Input: [1, 2, 3], all > 0
+// Expected: true
+
+// 59. Get first element from set [5, 10, 15]
+// Input: [5, 10, 15]
+// Expected: 5
+
+// 60. Get last element from set [5, 10, 15]
+// Input: [5, 10, 15]
+// Expected: 15
+
+// 61. Create HashSet with [30, 10, 20]
+// Input: 30, 10, 20
+// Expected: [10, 20, 30] (unordered, may vary)
+
+// 62. Create LinkedHashSet (maintains order) with [30, 10, 20]
+// Input: 30, 10, 20
+// Expected: [30, 10, 20]
+
+// 63. Sort set [50, 10, 30, 20]
+// Input: [50, 10, 30, 20]
+// Expected: [10, 20, 30, 50]
+
+// 64. Check if empty set [] is empty
+// Input: []
+// Expected: true
+
+// 65. Calculate sum of set [10, 20, 30]
+// Input: [10, 20, 30]
+// Expected: 60
+
+// 66. Find max in set [15, 5, 25, 10]
+// Input: [15, 5, 25, 10]
+// Expected: 25
+
+// 67. Find min in set [15, 5, 25, 10]
+// Input: [15, 5, 25, 10]
+// Expected: 5
+
+// 68. AddAll [30, 40] to set [10, 20]
+// Input: [10, 20], addAll [30, 40]
+// Expected: [10, 20, 30, 40]
+
+// 69. RemoveAll [20, 30] from set [10, 20, 30, 40]
+// Input: [10, 20, 30, 40], removeAll [20, 30]
+// Expected: [10, 40]
+
+// 70. RetainAll [20, 30] in set [10, 20, 30, 40]
+// Input: [10, 20, 30, 40], retainAll [20, 30]
+// Expected: [20, 30]
+
+// SECTION 3: MAP OPERATIONS (71-110)
+
+// 71. Create an empty map of String to Int
+// Input: -
+// Expected: {}
+
+// 72. Create map {"Alice"->25, "Bob"->30}
+// Input: "Alice"->25, "Bob"->30
+// Expected: {Alice=25, Bob=30}
+
+// 73. Create mutable map {"x"->1, "y"->2}
+// Input: "x"->1, "y"->2
+// Expected: {x=1, y=2}
+
+// 74. Put "z"->3 in map {"x"->1, "y"->2}
+// Input: {"x"->1, "y"->2}, put "z"->3
+// Expected: {x=1, y=2, z=3}
+
+// 75. Get value for key "Alice" from {"Alice"->25, "Bob"->30}
+// Input: {"Alice"->25, "Bob"->30}, get "Alice"
+// Expected: 25
+
+// 76. Get value for key "Charlie" with default 0 from {"Alice"->25}
+// Input: {"Alice"->25}, getOrDefault "Charlie", 0
+// Expected: 0
+
+// 77. Get value for key "Bob" or else return -1 from {"Alice"->25}
+// Input: {"Alice"->25}, getOrElse "Bob" -> -1
+// Expected: -1
+
+// 78. Check if map contains key "Alice" in {"Alice"->25, "Bob"->30}
+// Input: {"Alice"->25, "Bob"->30}, containsKey "Alice"
+// Expected: true
+
+// 79. Check if map contains value 30 in {"Alice"->25, "Bob"->30}
+// Input: {"Alice"->25, "Bob"->30}, containsValue 30
+// Expected: true
+
+// 80. Get size of map {"a"->1, "b"->2, "c"->3}
+// Input: {"a"->1, "b"->2, "c"->3}
+// Expected: 3
+
+// 81. Get all keys from {"a"->1, "b"->2, "c"->3}
+// Input: {"a"->1, "b"->2, "c"->3}
+// Expected: [a, b, c]
+
+// 82. Get all values from {"a"->1, "b"->2, "c"->3}
+// Input: {"a"->1, "b"->2, "c"->3}
+// Expected: [1, 2, 3]
+
+// 83. Get all entries from {"a"->1, "b"->2}
+// Input: {"a"->1, "b"->2}
+// Expected: [a=1, b=2]
+
+// 84. Print each key-value pair of {"x"->10, "y"->20}
+// Input: {"x"->10, "y"->20}
+// Expected: x=10 y=20
+
+// 85. Remove key "b" from {"a"->1, "b"->2, "c"->3}
+// Input: {"a"->1, "b"->2, "c"->3}, remove "b"
+// Expected: {a=1, c=3}
+
+// 86. Check if map {"a"->1} is empty
+// Input: {"a"->1}
+// Expected: false
+
+// 87. Filter map for values > 20 from {"a"->10, "b"->25, "c"->30}
+// Input: {"a"->10, "b"->25, "c"->30}, filter value > 20
+// Expected: {b=25, c=30}
+
+// 88. Filter keys not equal to "b" from {"a"->1, "b"->2, "c"->3}
+// Input: {"a"->1, "b"->2, "c"->3}, filterKeys != "b"
+// Expected: {a=1, c=3}
+
+// 89. Filter values >= 20 from {"a"->10, "b"->20, "c"->30}
+// Input: {"a"->10, "b"->20, "c"->30}, filterValues >= 20
+// Expected: {b=20, c=30}
+
+// 90. Map values +5 to {"a"->10, "b"->15}
+// Input: {"a"->10, "b"->15}, map values +5
+// Expected: {a=15, b=20}
+
+// 91. Map keys to uppercase from {"a"->1, "b"->2}
+// Input: {"a"->1, "b"->2}, map keys uppercase
+// Expected: {A=1, B=2}
+
+// 92. Check if any value > 25 in {"a"->10, "b"->20, "c"->30}
+// Input: {"a"->10, "b"->20, "c"->30}, any value > 25
+// Expected: true
+
+// 93. Check if all values > 5 in {"a"->10, "b"->20}
+// Input: {"a"->10, "b"->20}, all values > 5
+// Expected: true
+
+// 94. Count entries with value >= 20 in {"a"->10, "b"->20, "c"->30}
+// Input: {"a"->10, "b"->20, "c"->30}, count value >= 20
+// Expected: 2
+
+// 95. Find entry with max value in {"a"->10, "b"->30, "c"->20}
+// Input: {"a"->10, "b"->30, "c"->20}
+// Expected: b=30
+
+// 96. Find entry with min value in {"a"->10, "b"->30, "c"->20}
+// Input: {"a"->10, "b"->30, "c"->20}
+// Expected: a=10
+
+// 97. Convert map {"a"->1, "b"->2} to list
+// Input: {"a"->1, "b"->2}
+// Expected: [(a, 1), (b, 2)]
+
+// 98. Create HashMap {"x"->5, "y"->10}
+// Input: "x"->5, "y"->10
+// Expected: {x=5, y=10}
+
+// 99. Create LinkedHashMap (maintains order) {"c"->3, "a"->1, "b"->2}
+// Input: "c"->3, "a"->1, "b"->2
+// Expected: {c=3, a=1, b=2}
+
+// 100. PutAll {"b"->2, "c"->3} to map {"a"->1}
+// Input: {"a"->1}, putAll {"b"->2, "c"->3}
+// Expected: {a=1, b=2, c=3}
+
+// 101. Clear map {"a"->1, "b"->2}
+// Input: {"a"->1, "b"->2}, clear
+// Expected: {}
+
+// 102. GetOrPut "b"->2 in map {"a"->1}
+// Input: {"a"->1}, getOrPut "b" -> 2
+// Expected: value=2, map={a=1, b=2}
+
+// 103. Merge "a" with value 5 using sum in {"a"->1, "b"->2}
+// Input: {"a"->1, "b"->2}, merge "a", 5, sum
+// Expected: {a=6, b=2}
+
+// 104. Add map {"b"->2} to {"a"->1} using plus
+// Input: {"a"->1} + {"b"->2}
+// Expected: {a=1, b=2}
+
+// 105. Remove key "a" from {"a"->1, "b"->2} using minus
+// Input: {"a"->1, "b"->2} - "a"
+// Expected: {b=2}
+
+// 106. AssociateWith: map ["a", "bb", "ccc"] to their lengths
+// Input: ["a", "bb", "ccc"], associateWith length
+// Expected: {a=1, bb=2, ccc=3}
+
+// 107. AssociateBy: map ["a", "bb", "ccc"] by their lengths
+// Input: ["a", "bb", "ccc"], associateBy length
+// Expected: {1=a, 2=bb, 3=ccc}
+
+// 108. GroupBy: group [1, 2, 3, 4, 5, 6] by even/odd
+// Input: [1, 2, 3, 4, 5, 6], groupBy % 2
+// Expected: {1=[1, 3, 5], 0=[2, 4, 6]}
+
+// 109. Convert pairs [("a", 1), ("b", 2)] to map
+// Input: [("a", 1), ("b", 2)]
+// Expected: {a=1, b=2}
+
+// 110. Use sequence to filter map for values > 20 from {"a"->10, "b"->25, "c"->30}
+// Input: {"a"->10, "b"->25, "c"->30}, sequence filter > 20
+// Expected: {b=25, c=30}
+
+// SECTION 4: ADVANCED OPERATIONS (111-150)
+
+// 111. FlatMap [[1, 2], [3, 4], [5]]
+// Input: [[1, 2], [3, 4], [5]]
+// Expected: [1, 2, 3, 4, 5]
+
+// 112. Flatten [[10, 20], [30], [40, 50]]
+// Input: [[10, 20], [30], [40, 50]]
+// Expected: [10, 20, 30, 40, 50]
+
+// 113. Zip [1, 2, 3] with ["a", "b", "c"]
+// Input: [1, 2, 3], ["a", "b", "c"]
+// Expected: [(1, a), (2, b), (3, c)]
+
+// 114. Unzip [(1, "a"), (2, "b"), (3, "c")]
+// Input: [(1, "a"), (2, "b"), (3, "c")]
+// Expected: numbers=[1, 2, 3], letters=[a, b, c]
+
+// 115. Fold [1, 2, 3, 4] with initial 0 and sum operation
+// Input: [1, 2, 3, 4], fold(0) { acc, i -> acc + i }
+// Expected: 10
+
+// 116. FoldRight [1, 2, 3] with initial 0 and sum
+// Input: [1, 2, 3], foldRight(0) { i, acc -> acc + i }
+// Expected: 6
+
+// 117. Reduce [1, 2, 3, 4] by multiplication
+// Input: [1, 2, 3, 4], reduce multiply
+// Expected: 24
+
+// 118. ReduceRight [1, 2, 3, 4] by subtraction
+// Input: [1, 2, 3, 4], reduceRight subtract
+// Expected: -2
+
+// 119. SumOf squares for [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], sumOf square
+// Expected: 30
+
+// 120. MaxOf each element * 2.5 in [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], maxOf * 2.5
+// Expected: 10.0
+
+// 121. MinOf each element * 0.5 in [2, 4, 6]
+// Input: [2, 4, 6], minOf * 0.5
+// Expected: 1.0
+
+// 122. MaxWith by length in ["apple", "pie", "banana"]
+// Input: ["apple", "pie", "banana"], maxWith by length
+// Expected: banana
+
+// 123. MinWith by length in ["apple", "pie", "banana"]
+// Input: ["apple", "pie", "banana"], minWith by length
+// Expected: pie
+
+// 124. SortedBy length for ["apple", "pie", "banana"]
+// Input: ["apple", "pie", "banana"], sortedBy length
+// Expected: [pie, apple, banana]
+
+// 125. SortedByDescending length for ["apple", "pie", "banana"]
+// Input: ["apple", "pie", "banana"], sortedByDescending length
+// Expected: [banana, apple, pie]
+
+// 126. SortedWith comparator by length for ["pear", "apple", "kiwi"]
+// Input: ["pear", "apple", "kiwi"], sortedWith by length
+// Expected: [kiwi, pear, apple]
+
+// 127. Shuffle [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5]
+// Expected: [random order]
+
+// 128. Get random element from [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50]
+// Expected: (random element)
+
+// 129. TakeWhile < 4 from [1, 2, 3, 4, 5, 6]
+// Input: [1, 2, 3, 4, 5, 6], takeWhile < 4
+// Expected: [1, 2, 3]
+
+// 130. TakeLastWhile > 3 from [1, 2, 3, 4, 5, 6]
+// Input: [1, 2, 3, 4, 5, 6], takeLastWhile > 3
+// Expected: [4, 5, 6]
+
+// 131. DropWhile < 3 from [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], dropWhile < 3
+// Expected: [3, 4, 5]
+
+// 132. DropLastWhile > 3 from [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], dropLastWhile > 3
+// Expected: [1, 2, 3]
+
+// 133. FilterIndexed for even indices in [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50], filterIndexed even indices
+// Expected: [10, 30, 50]
+
+// 134. MapIndexed to "index:value" for ["a", "b", "c"]
+// Input: ["a", "b", "c"], mapIndexed "index:value"
+// Expected: [0:a, 1:b, 2:c]
+
+// 135. ForEachIndexed print "index:value" for ["x", "y", "z"]
+// Input: ["x", "y", "z"]
+// Expected: 0:x 1:y 2:z
+
+// 136. WithIndex for ["red", "green", "blue"]
+// Input: ["red", "green", "blue"]
+// Expected: 0:red 1:green 2:blue
+
+// 137. DistinctBy length for ["a", "ab", "abc", "b", "bc", "c"]
+// Input: ["a", "ab", "abc", "b", "bc", "c"], distinctBy length
+// Expected: [a, ab, abc]
+
+// 138. Union [1, 2, 3] and [3, 4, 5]
+// Input: [1, 2, 3], [3, 4, 5]
+// Expected: [1, 2, 3, 4, 5]
+
+// 139. Intersect [1, 2, 3, 4] and [3, 4, 5, 6]
+// Input: [1, 2, 3, 4], [3, 4, 5, 6]
+// Expected: [3, 4]
+
+// 140. Subtract [2, 3] from [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], [2, 3]
+// Expected: [1, 4]
+
+// 141. Plus [1, 2] and [3, 4]
+// Input: [1, 2] + [3, 4]
+// Expected: [1, 2, 3, 4]
+
+// 142. Minus [2, 4] from [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5] - [2, 4]
+// Expected: [1, 3, 5]
+
+// 143. JoinToString [1, 2, 3, 4]
+// Input: [1, 2, 3, 4]
+// Expected: "1, 2, 3, 4"
+
+// 144. JoinToString with separator " | " and prefix/suffix for [1, 2, 3]
+// Input: [1, 2, 3], " | ", "[", "]"
+// Expected: "[1 | 2 | 3]"
+
+// 145. Associate names ["Alice", "Bob"] to their lengths
+// Input: ["Alice", "Bob"], associate to length
+// Expected: {Alice=5, Bob=3}
+
+// 146. Single element from [42]
+// Input: [42]
+// Expected: 42
+
+// 147. SingleOrNull from [1, 2]
+// Input: [1, 2]
+// Expected: null
+
+// 148. FirstOrNull from empty list []
+// Input: []
+// Expected: null
+
+// 149. LastOrNull from empty list []
+// Input: []
+// Expected: null
+
+// 150. Find first element > 2 in [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], find > 2
+// Expected: 3
+
+// SECTION 5: SEQUENCES & MORE (151-200)
+
+// 151. Create sequence from list [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5]
+// Expected: Sequence[1, 2, 3, 4, 5]
+
+// 152. Sequence filter even and map * 2 from [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], sequence filter even, map * 2
+// Expected: [4, 8]
+
+// 153. GenerateSequence starting from 1, increment until 5
+// Input: start=1, increment while < 6
+// Expected: [1, 2, 3, 4, 5]
+
+// 154. Infinite sequence from 1, take first 5
+// Input: generateSequence(1) { it + 1 }, take 5
+// Expected: [1, 2, 3, 4, 5]
+
+// 155. Convert sequence to iterable [1, 2, 3]
+// Input: sequence[1, 2, 3]
+// Expected: [1, 2, 3]
+
+// 156. IndexOfFirst element > 3 in [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], indexOfFirst > 3
+// Expected: 3
+
+// 157. IndexOfLast element < 4 in [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], indexOfLast < 4
+// Expected: 2
+
+// 158. BinarySearch for 30 in sorted [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50], search 30
+// Expected: 2
+
+// 159. BinarySearch for 25 (not found) in [10, 20, 30, 40]
+// Input: [10, 20, 30, 40], search 25
+// Expected: -3 (insertion point)
+
+// 160. Component1 and component2 from pair (10, "Hello")
+// Input: (10, "Hello")
+// Expected: component1=10, component2="Hello"
+
+// 161. Destructuring triple (1, "A", true)
+// Input: (1, "A", true)
+// Expected: first=1, second="A", third=true
+
+// 162. ElementAt index 2 from [100, 200, 300, 400]
+// Input: [100, 200, 300, 400], index 2
+// Expected: 300
+
+// 163. ElementAtOrNull index 10 from [1, 2, 3]
+// Input: [1, 2, 3], index 10
+// Expected: null
+
+// 164. ElementAtOrElse index 10 with default -1 from [1, 2, 3]
+// Input: [1, 2, 3], index 10, default -1
+// Expected: -1
+
+// 165. GetOrNull index 5 from [10, 20, 30]
+// Input: [10, 20, 30], index 5
+// Expected: null
+
+// 166. RandomOrNull from empty list []
+// Input: []
+// Expected: null
+
+// 167. ContainsAll [2, 3] in [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], containsAll [2, 3]
+// Expected: true
+
+// 168. ContainsAll [6, 7] in [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], containsAll [6, 7]
+// Expected: false
+
+// 169. Slice with indices [0, 2, 4] from [10, 20, 30, 40, 50]
+// Input: [10, 20, 30, 40, 50], indices [0, 2, 4]
+// Expected: [10, 30, 50]
+
+// 170. FilterIsInstance<Int> from mixed list [1, "a", 2, "b", 3]
+// Input: [1, "a", 2, "b", 3], filterIsInstance Int
+// Expected: [1, 2, 3]
+
+// 171. FilterNotNull from [1, null, 2, null, 3]
+// Input: [1, null, 2, null, 3]
+// Expected: [1, 2, 3]
+
+// 172. MapNotNull applying {if (it > 2) it else null} to [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], mapNotNull {if (it > 2) it else null}
+// Expected: [3, 4]
+
+// 173. FlatMapIndexed for [[1,2], [3,4]] multiply by index
+// Input: [[1,2], [3,4]], flatMapIndexed {i, list -> list.map{it * i}}
+// Expected: [0, 0, 3, 4]
+
+// 174. MapIndexedNotNull remove nulls after mapping
+// Input: [1, 2, 3, 4], mapIndexedNotNull {i, v -> if(i % 2 == 0) v else null}
+// Expected: [1, 3]
+
+// 175. OnEach print and return list [1, 2, 3]
+// Input: [1, 2, 3], onEach print
+// Expected: prints 1 2 3, returns [1, 2, 3]
+
+// 176. Also perform action on list [1, 2, 3]
+// Input: [1, 2, 3], also {print(it.size)}
+// Expected: prints 3, returns [1, 2, 3]
+
+// 177. Apply add element to mutable list [1, 2]
+// Input: mutableListOf(1, 2), apply {add(3)}
+// Expected: [1, 2, 3]
+
+// 178. Let transform list [1, 2, 3] to sum
+// Input: [1, 2, 3], let {it.sum()}
+// Expected: 6
+
+// 179. Run block on list [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5], run {filter{it > 2}.sum()}
+// Expected: 12
+
+// 180. TakeIf condition > 3 elements in [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], takeIf {it.size > 3}
+// Expected: [1, 2, 3, 4]
+
+// 181. TakeIf condition > 5 elements in [1, 2, 3]
+// Input: [1, 2, 3], takeIf {it.size > 5}
+// Expected: null
+
+// 182. TakeUnless condition empty on [1, 2, 3]
+// Input: [1, 2, 3], takeUnless {it.isEmpty()}
+// Expected: [1, 2, 3]
+
+// 183. TakeUnless condition not empty on [1, 2, 3]
+// Input: [1, 2, 3], takeUnless {it.isNotEmpty()}
+// Expected: null
+
+// 184. CoerceAtLeast 5 on list size [1, 2]
+// Input: [1, 2].size, coerceAtLeast 5
+// Expected: 5
+
+// 185. CoerceAtMost 3 on list size [1, 2, 3, 4, 5]
+// Input: [1, 2, 3, 4, 5].size, coerceAtMost 3
+// Expected: 3
+
+// 186. CoerceIn range 2..4 on value 1
+// Input: 1, coerceIn 2..4
+// Expected: 2
+
+// 187. CoerceIn range 2..4 on value 5
+// Input: 5, coerceIn 2..4
+// Expected: 4
+
+// 188. Scan (running sum) on [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], scan(0) {acc, i -> acc + i}
+// Expected: [0, 1, 3, 6, 10]
+
+// 189. RunningFold on [1, 2, 3, 4] with sum
+// Input: [1, 2, 3, 4], runningFold(0) {acc, i -> acc + i}
+// Expected: [0, 1, 3, 6, 10]
+
+// 190. RunningReduce on [1, 2, 3, 4] with sum
+// Input: [1, 2, 3, 4], runningReduce {acc, i -> acc + i}
+// Expected: [1, 3, 6, 10]
+
+// 191. Windowed with step 2 and size 3 on [1,2,3,4,5,6,7]
+// Input: [1,2,3,4,5,6,7], windowed(size=3, step=2)
+// Expected: [[1,2,3], [3,4,5], [5,6,7]]
+
+// 192. Windowed with partialWindows on [1,2,3,4,5]
+// Input: [1,2,3,4,5], windowed(size=3, partialWindows=true)
+// Expected: [[1,2,3], [2,3,4], [3,4,5], [4,5], [5]]
+
+// 193. Chunked with transform on [1,2,3,4,5,6]
+// Input: [1,2,3,4,5,6], chunked(2) {it.sum()}
+// Expected: [3, 7, 11]
+
+// 194. ZipWithNext on [1, 2, 3, 4]
+// Input: [1, 2, 3, 4]
+// Expected: [(1,2), (2,3), (3,4)]
+
+// 195. ZipWithNext with transform (sum) on [1, 2, 3, 4]
+// Input: [1, 2, 3, 4], zipWithNext {a, b -> a + b}
+// Expected: [3, 5, 7]
+
+// 196. Associate with index ["a", "b", "c"]
+// Input: ["a", "b", "c"], withIndex associate
+// Expected: {0=a, 1=b, 2=c}
+
+// 197. Partition with index on [10, 20, 30, 40]
+// Input: [10, 20, 30, 40], partition by index even/odd
+// Expected: even_indices=[10, 30], odd_indices=[20, 40]
+
+// 198. Grouping and counting ["a", "b", "a", "c", "b", "a"]
+// Input: ["a", "b", "a", "c", "b", "a"], groupingBy count
+// Expected: {a=3, b=2, c=1}
+
+// 199. Grouping and summing by key [("a",1), ("b",2), ("a",3)]
+// Input: [("a",1), ("b",2), ("a",3)], groupingBy sum values
+// Expected: {a=4, b=2}
+
+// 200. Aggregate with eachCount on ["apple", "apricot", "banana", "berry"]
+// Input: ["apple", "apricot", "banana", "berry"], groupBy first letter, count
+// Expected: {a=2, b=2}
