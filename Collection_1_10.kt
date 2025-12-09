@@ -21,26 +21,26 @@ fun main() {
 }
 
 //1. Create a list with elements [1, 2, 3, 4, 5]
-internal fun collection_1() {
+private  fun collection_1() {
     val itemList = listOf(1, 2, 3, 4, 5)
     print(itemList)
 }
 
 // 3. Create a mutable list with [10, 20, 30]
-internal fun collection_2() {
+private  fun collection_2() {
     val itemList = mutableListOf(10, 20, 30)
     print(itemList)
 }
 
 // 4. Add element 40 to mutable list [10, 20, 30]
-internal fun collection_3(){
+private  fun collection_3(){
     val itemList = mutableListOf(10, 20, 30)
     itemList.add(40)
     print(itemList)
 }
 
 // 5. Add element 5 at index 0 to list [10, 20, 30]
-fun collection_4(){
+private fun collection_4(){
     val itemList = listOf(10, 20, 30)
     val newList = itemList.toMutableList().apply {
         add(0, 5)
@@ -49,40 +49,40 @@ fun collection_4(){
 }
 
 // 6. Remove element 20 from list [10, 20, 30, 20]
-fun collection_5(){
+private fun collection_5(){
     val itemList = listOf(10, 20, 30,20)
     val result = itemList.toSet()
     print(result)
 }
 
 // 7. Remove element at index 1 from [10, 20, 30]
-fun colection_6(){
+private fun colection_6(){
     val itemList = mutableListOf(10, 20, 30,20)
     val result = itemList.removeAt(1)
     print(result)
 }
 
 // 8. Get element at index 2 from [5, 10, 15, 20]
-fun collection_7(){
+private fun collection_7(){
     val itemList = listOf(5, 10, 15,20)
     print(itemList[2])
 }
 
 // 9. Get first element from [100, 200, 300]
-fun collection_8(){
+private fun collection_8(){
     val itemList = listOf(100,200,300)
     //val itemList:List<Int> = listOf()
     print(itemList.firstOrNull())
 }
 
 // 10. Get last element from [100, 200, 300]
-fun collection_9(){
+private fun collection_9(){
     val itemList = listOf(100,200,300)
     print(itemList.lastOrNull())
 }
 
 // 12. Check if list [1, 2, 3, 4] contains 3
-internal fun collection_10(){
+fun collection_10(){
     val itemList  = listOf(1, 2, 3, 4)
     println("Check List Contains 3:${itemList.contains(3)}")
     println("Check List Contains 5:${itemList.contains(5)}")
